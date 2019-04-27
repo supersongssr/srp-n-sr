@@ -492,6 +492,14 @@ class Dbv3Transfer(DbTransfer):
                     db=self.cfg["db"], charset='utf8')
         conn.autocommit(True)
 
+        ## song 前端节点倍率控制
+        rate = conn.cursor()
+        rate.execute("SELECT " + 'traffic_rate' +" FROM ss_node where `id`='" + str(self.cfg["node_id"]) + "'")
+        nodeinfo = rate.fetchone()
+        self.cfg['transfer_mul'] = float(nodeinfo[0])
+        rate.close()
+        ##
+
         for id in dt_transfer.keys():
             transfer = dt_transfer[id]
             bandwidth_thistime = bandwidth_thistime + transfer[0] + transfer[1]
