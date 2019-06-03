@@ -5,7 +5,7 @@
     "local_address": "127.0.0.1",
     "local_port": 1080,
 
-    "password": "www.ssvss.xyz",
+    "password": "www.abc.xyz",
     "method": "none",
     "protocol": "auth_chain_a",
     "protocol_param": "",
@@ -16,7 +16,7 @@
 
     "additional_ports" : {
     "11077": {
-        "passwd": "www.ssvss.xyz",
+        "passwd": "www.abc.xyz",
         "method": "none",
         "protocol": "auth_chain_a",
         "protocol_param": "3#",
@@ -29,6 +29,6 @@
     "udp_timeout": 60,
     "dns_ipv6": false,
     "connect_verbose_info": 1,
-    "redirect": ["*:443#127.0.0.1:488"],
+    "redirect": ["*:11077#127.0.0.1:80"],
     "fast_open": false
 }

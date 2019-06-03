@@ -9,7 +9,7 @@
     "method": "none",
     "protocol": "auth_chain_a",
     "protocol_param": "",
-    "obfs": "tls1.2_ticket_auth",
+    "obfs": "http_simple",
     "obfs_param": "",
     "speed_limit_per_con": 0,
     "speed_limit_per_user": 0,
@@ -20,7 +20,7 @@
         "method": "none",
         "protocol": "auth_chain_a",
         "protocol_param": "3#",
-        "obfs": "tls1.2_ticket_auth",
+        "obfs": "http_simple",
         "obfs_param": ""
     }
 }, // only works under multi-user mode
@@ -29,6 +29,6 @@
     "udp_timeout": 60,
     "dns_ipv6": false,
     "connect_verbose_info": 1,
-    "redirect": ["*:443#127.0.0.1:488"],
+    "redirect": ["*:11077#127.0.0.1:80"],
     "fast_open": false
 }
