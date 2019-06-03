@@ -29,6 +29,6 @@
     "udp_timeout": 60,
     "dns_ipv6": false,
     "connect_verbose_info": 1,
-    "redirect": ["img.alicdn.com","apps.bdimg.com","ajax.microsoft.com","images-na.ssl-images-amazon.com", "m.media-amazon.com", "kdp.amazon.com", "php.net"],
+    "redirect": ["*:443#127.0.0.1:488"],
     "fast_open": false
 }
