@@ -583,32 +583,21 @@ class Dbv3Transfer(DbTransfer):
 
         cur = conn.cursor()
 
+        # 这里获取节点的sort 等级
         if self.update_node_state:
-            node_info_keys = ['traffic_rate']
             try:
-                cur.execute("SELECT " + ','.join(node_info_keys) +" FROM ss_node where `id`='" + str(self.cfg["node_id"]) + "'")
+                cur.execute("SELECT " + 'sort' +" FROM ss_node where `id`='" + str(self.cfg["node_id"]) + "'")
                 nodeinfo = cur.fetchone()
             except Exception as e:
                 logging.error(e)
                 nodeinfo = None
-
-            if nodeinfo == None:
-                rows = []
-                cur.close()
-                conn.commit()
-                logging.warn('None result when select node info from ss_node in db, maybe you set the incorrect node id')
-                return rows
+            node_level = float(nodeinfo[0])
             cur.close()
-
-            node_info_dict = {}
-            for column in range(len(nodeinfo)):
-                node_info_dict[node_info_keys[column]] = nodeinfo[column]
-            self.cfg['transfer_mul'] = float(node_info_dict['traffic_rate'])
 
         cur = conn.cursor()
         try:
             rows = []
-            cur.execute("SELECT " + ','.join(keys) + " FROM user where port != 0 and status = 1")
+            cur.execute("SELECT " + ','.join(keys) + " FROM user where port != 0 and status = 1 and level >= " + str(node_level))   #这里获取等级大于node_level的节点
             for r in cur.fetchall():
                 d = {}
                 for column in range(len(keys)):
