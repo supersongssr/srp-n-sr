@@ -5,7 +5,7 @@
     "local_address": "127.0.0.1",
     "local_port": 1080,
 
-    "password": "www.dossr.xyz",
+    "password": "aaabbbccc",
     "method": "none",
     "protocol": "auth_chain_a",
     "protocol_param": "3#",
@@ -16,7 +16,15 @@
 
     "additional_ports" : {
     "11077": {
-        "passwd": "www.dossr.xyz",
+        "passwd": "aaabbbccc",
+        "method": "none",
+        "protocol": "auth_chain_a",
+        "protocol_param": "3#",
+        "obfs": "plain",
+        "obfs_param": ""
+    },
+    "11078": {
+        "passwd": "aaabbbccc",
         "method": "none",
         "protocol": "auth_chain_a",
         "protocol_param": "3#",
