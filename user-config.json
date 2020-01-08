@@ -6,8 +6,8 @@
     "local_port": 1080,
 
     "password": "aaabbbccc",
-    "method": "aes-128-ctr",
-    "protocol": "auth_aes128_md5",
+    "method": "none",
+    "protocol": "auth_chain_a",
     "protocol_param": "1#",
     "obfs": "plain",
     "obfs_param": "",
@@ -17,16 +17,16 @@
     "additional_ports" : {
     "11077": {
         "passwd": "aaabbbccc",
-        "method": "aes-128-ctr",
-        "protocol": "auth_aes128_md5",
+        "method": "none",
+        "protocol": "auth_chain_a",
         "protocol_param": "1#",
         "obfs": "http_simple",
         "obfs_param": ""
     },
     "11078": {
         "passwd": "aaabbbccc",
-        "method": "aes-128-ctr",
-        "protocol": "auth_aes128_md5",
+        "method": "none",
+        "protocol": "auth_chain_a",
         "protocol_param": "1#",
         "obfs": "tls1.2_ticket_auth",
         "obfs_param": ""
