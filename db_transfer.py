@@ -586,7 +586,7 @@ class Dbv3Transfer(DbTransfer):
         # 这里获取节点的sort 等级
         if self.update_node_state:
             try:
-                cur.execute("SELECT " + 'sort' +" FROM ss_node where `id`='" + str(self.cfg["node_id"]) + "'")
+                cur.execute("SELECT " + 'level' +" FROM ss_node where `id`='" + str(self.cfg["node_id"]) + "'")
                 nodeinfo = cur.fetchone()
             except Exception as e:
                 logging.error(e)
@@ -672,4 +672,3 @@ class MuJsonTransfer(TransferBase):
         if not rows:
             logging.warn('no user in json file')
         return rows
-
